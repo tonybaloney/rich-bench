@@ -30,7 +30,7 @@ $ richbench my_benchmarks/
 
 Results are displayed in a table like this:
 
-![Example result table](screenshot.png)
+![Example result table](https://github.com/tonybaloney/rich-bench/raw/master/screenshot.png)
 
 
 ```console
