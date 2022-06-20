@@ -16,7 +16,7 @@ They behave and perform very differently in CPython.
 
 ## Installation
 
-Requires Python 3.7+ 
+Requires Python 3.6+ and can be installed using pip: 
 
 ```pip install richbench```
 

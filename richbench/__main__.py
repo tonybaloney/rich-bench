@@ -7,7 +7,10 @@ import pathlib
 import sys
 from types import FunctionType
 import pyinstrument
-from statistics import fmean
+try:
+    from statistics import fmean
+except ImportError: # Python 3.6-3.7 doesn't have fmean
+    from statistics import mean as fmean # YOLO
 from rich.console import Console
 from rich.table import Table
 from rich.text import Text
