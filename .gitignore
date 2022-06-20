@@ -1,0 +1,14 @@
+__pycache__
+.py[co]
+dist/
+build/
+.eggs/
+.tox/
+.venv/
+.vscode/
+.mypy_cache/
+.pytest_cache/
+.pytest-cov/
+.coverage/
+.DS_Store
+.profiles/
