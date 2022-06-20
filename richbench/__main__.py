@@ -66,7 +66,7 @@ def main():
 
     args = parser.parse_args()
 
-    table = Table(title=f"Tinybench, repeat={args.repeat}, number={args.times}")
+    table = Table(title=f"Benchmarks, repeat={args.repeat}, number={args.times}")
 
     table.add_column("Benchmark", justify="right", style="cyan", no_wrap=True)
     table.add_column("Min", width=7)

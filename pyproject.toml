@@ -3,7 +3,7 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "tinybench"
+name = "rich-bench"
 authors = [{name = "Anthony Shaw"}]
 classifiers = ["License :: OSI Approved :: MIT License"]
 dynamic = ["version", "description"]
@@ -12,7 +12,7 @@ requires-python = ">=3.6"
 readme = "README.md"
 
 [project.scripts]
-tinybench = "tinybench.__main__:main"
+richbench = "richbench.__main__:main"
 
 [project.urls]
-Home = "https://github.com/tonybaloney/tinybench"
+Home = "https://github.com/tonybaloney/rich-bench"
