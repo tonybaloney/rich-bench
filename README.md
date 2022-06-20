@@ -14,6 +14,12 @@ They behave and perform very differently in CPython.
 
 `richbench` encourages you to write benchmarks inside functions to properly simulate the closures and scope of production code.
 
+## Installation
+
+Requires Python 3.7+ 
+
+```pip install richbench```
+
 ## Usage
 
 Write your benchmark functions in a directory and run `richbench` with that target to get the results:
