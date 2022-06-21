@@ -35,7 +35,7 @@ Results are displayed in a table like this:
 
 ```console
 $ richbench --help
-usage: richbench [-h] [--profile] [--percentage] [--benchmark [BENCHMARK]] [--repeat REPEAT] [--times TIMES] target [target ...]
+usage: richbench [-h] [--profile] [--percentage] [--markdown] [--benchmark [BENCHMARK]] [--repeat REPEAT] [--times TIMES] target [target ...]
 
 positional arguments:
   target
@@ -44,6 +44,7 @@ options:
   -h, --help            show this help message and exit
   --profile             Profile the benchmarks and store in .profiles/
   --percentage          Show percentage of improvement instead of multiplier
+  --markdown            Prints a markdown friendly table
   --benchmark [BENCHMARK]
                         Run specific benchmark
   --repeat REPEAT       Repeat benchmark this many times

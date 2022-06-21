@@ -14,9 +14,24 @@ except ImportError: # Python 3.6-3.7 doesn't have fmean
 from rich.console import Console
 from rich.table import Table
 from rich.text import Text
+from rich.box import Box, HEAVY_HEAD
 
 DEFAULT_REPEAT = 5
 DEFAULT_TIMES = 5
+
+MARKDOWN: Box = Box(
+    """\
+    
+| ||
+|-||
+| ||
+|-||
+|-||
+| ||
+    
+""",
+    ascii=True,
+)
 
 def format_delta(a: float, b: float, d: float, perc: bool = False) -> Text:
     if a < b:
@@ -62,6 +77,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--profile', action='store_true', help='Profile the benchmarks and store in .profiles/')
     parser.add_argument('--percentage', action='store_true', help="Show percentage of improvement instead of multiplier")
+    parser.add_argument('--markdown', action='store_true', help="Prints a markdown friendly table")
     parser.add_argument('--benchmark', nargs='?', default=None, help="Run specific benchmark")
     parser.add_argument('--repeat', type=int, default=DEFAULT_REPEAT, help="Repeat benchmark this many times")
     parser.add_argument('--times', type=int, default=DEFAULT_TIMES, help="Run benchmark this many times")
@@ -69,7 +85,8 @@ def main():
 
     args = parser.parse_args()
 
-    table = Table(title=f"Benchmarks, repeat={args.repeat}, number={args.times}")
+    box = MARKDOWN if args.markdown else HEAVY_HEAD
+    table = Table(title=f"Benchmarks, repeat={args.repeat}, number={args.times}", box=box)
 
     table.add_column("Benchmark", justify="right", style="cyan", no_wrap=True)
     table.add_column("Min", width=7)
