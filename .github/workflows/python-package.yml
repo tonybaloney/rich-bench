@@ -31,3 +31,4 @@ jobs:
     - name: Run examples
       run: |
         richbench examples/
+        richbench --percentage examples/
