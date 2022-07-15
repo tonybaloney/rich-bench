@@ -116,9 +116,9 @@ def main():
                     delta_min = (abs(min(with_result) - min(without_result)) / min(without_result)) * 100.0
                     delta_max = (abs(max(with_result) - max(without_result)) / max(without_result)) * 100.0
 
-                    fdelta_min = format_delta(min(with_result), min(without_result), delta_min)
-                    fdelta_max = format_delta(max(with_result), max(without_result), delta_max)
-                    fdelta_mean = format_delta(fmean(with_result), fmean(without_result), delta_mean)
+                    fdelta_min = format_delta(min(with_result), min(without_result), delta_min, args.percentage)
+                    fdelta_max = format_delta(max(with_result), max(without_result), delta_max, args.percentage)
+                    fdelta_mean = format_delta(fmean(with_result), fmean(without_result), delta_mean, args.percentage)
 
                     table.add_row(
                                 desc,
