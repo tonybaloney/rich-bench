@@ -14,24 +14,11 @@ except ImportError: # Python 3.6-3.7 doesn't have fmean
 from rich.console import Console
 from rich.table import Table
 from rich.text import Text
-from rich.box import Box, HEAVY_HEAD
+from rich.box import Box, HEAVY_HEAD, MARKDOWN
 
 DEFAULT_REPEAT = 5
 DEFAULT_TIMES = 5
 
-MARKDOWN: Box = Box(
-    """\
-    
-| ||
-|-||
-| ||
-|-||
-|-||
-| ||
-    
-""",
-    ascii=True,
-)
 
 def format_delta(a: float, b: float, d: float, perc: bool = False) -> Text:
     if a < b:
