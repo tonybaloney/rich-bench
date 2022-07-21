@@ -7,7 +7,7 @@ name = "richbench"
 authors = [{name = "Anthony Shaw"}]
 classifiers = ["License :: OSI Approved :: MIT License"]
 dynamic = ["version", "description"]
-dependencies = ["rich", "pyinstrument"]
+dependencies = ["rich>=12.5.0", "pyinstrument"]
 requires-python = ">=3.6"
 readme = "README.md"
 
