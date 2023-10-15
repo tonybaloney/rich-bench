@@ -79,9 +79,6 @@ def main():
     table.add_column("Min", width=7)
     table.add_column("Max", width=7)
     table.add_column("Mean", width=7)
-    table.add_column("Min (+)", style="blue", width=15)
-    table.add_column("Max (+)", style="blue", width=15)
-    table.add_column("Mean (+)", style="blue", width=15)
 
     n = 0
     for target in args.target:
@@ -94,27 +91,15 @@ def main():
             if hasattr(i, "__benchmarks__"):
                 for benchmark in i.__benchmarks__:
                     n += 1
-                    func1, func2, desc = benchmark
+                    func, desc = benchmark
                     
-                    without_result = benchmark_function(func1, bench_dir, args.repeat, args.times, args.profile)
-                    with_result = benchmark_function(func2, bench_dir, args.repeat, args.times, args.profile)
-
-                    delta_mean = (abs(fmean(with_result) - fmean(without_result)) / fmean(without_result)) * 100.0
-                    delta_min = (abs(min(with_result) - min(without_result)) / min(without_result)) * 100.0
-                    delta_max = (abs(max(with_result) - max(without_result)) / max(without_result)) * 100.0
-
-                    fdelta_min = format_delta(min(with_result), min(without_result), delta_min, args.percentage)
-                    fdelta_max = format_delta(max(with_result), max(without_result), delta_max, args.percentage)
-                    fdelta_mean = format_delta(fmean(with_result), fmean(without_result), delta_mean, args.percentage)
+                    without_result = benchmark_function(func, bench_dir, args.repeat, args.times, args.profile)
 
                     table.add_row(
                                 desc,
                                 "{:.3f}".format(min(without_result)),
                                 "{:.3f}".format(max(without_result)),
                                 "{:.3f}".format(fmean(without_result)),
-                                fdelta_min,
-                                fdelta_max,
-                                fdelta_mean,
                                 )
 
     console = Console(width=150)

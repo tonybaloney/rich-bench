@@ -9,7 +9,6 @@ def sort_three():
         sorted([3,2,4])
 
 __benchmarks__ = [
-    (sort_seven, sort_three, "Sorting 3 items instead of 7"),
-    # run the same benchmark in reverse to see what a slowdown looks like
-    (sort_three, sort_seven, "Sorting 7 items instead of 3"),
+    (sort_seven, "Sorting 3 items"),
+    (sort_three, "Sorting 7 items"),
 ]
